@@ -1,0 +1,6 @@
+---
+- name: 'Include tasks for Installing NGINX'
+  ansible.builtin.include_tasks: 'install-{{ ansible_os_family }}.yml'
+
+- name: 'Include tasks for Configure NGINX'
+  ansible.builtin.import_tasks: 'configure.yml'

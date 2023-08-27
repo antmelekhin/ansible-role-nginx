@@ -1,0 +1,33 @@
+---
+galaxy_info:
+  author: Melekhin Anton
+  role_name: nginx
+  namespace: antmelekhin
+  description: An Ansible role that installs NGINX web server.
+
+  license: MIT
+
+  min_ansible_version: '2.9'
+
+  platforms:
+    - name: Debian
+      versions:
+        - 'buster'
+        - 'bullseye'
+        - 'bookworm'
+    - name: EL
+      versions:
+        - '7'
+        - '8'
+        - '9'
+    - name: Ubuntu
+      versions:
+        - 'bionic'
+        - 'focal'
+        - 'jammy'
+
+  galaxy_tags:
+    - nginx
+    - web
+
+dependencies: []

@@ -1,0 +1,32 @@
+---
+- name: 'Verify'
+  hosts: all
+  gather_facts: false
+  tasks:
+    - name: 'Gathering Service Facts'
+      ansible.builtin.service_facts:
+
+    - name: 'Assert that NGINX service is enabled and running'
+      ansible.builtin.assert:
+        that:
+          - ansible_facts.services['nginx.service'].state == 'running' or
+            ansible_facts.services['nginx.service'].state == 'active'
+          - ansible_facts.services['nginx.service'].status == 'enabled'
+
+    - name: 'Check current NGINX version'
+      ansible.builtin.command:
+        cmd: '/usr/sbin/nginx -v'
+      changed_when: false
+      register: _nginx_version_check
+
+    - name: 'Version output'
+      ansible.builtin.debug:
+        var: _nginx_version_check.stderr_lines[0].split('/')[1]
+
+    - name: 'Check url'
+      ansible.builtin.uri:
+        url: 'http://{{ ansible_host }}:80'
+      register: _result
+      until: _result.status == 200
+      retries: 120
+      delay: 5

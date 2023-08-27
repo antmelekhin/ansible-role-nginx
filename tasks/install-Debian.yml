@@ -1,0 +1,45 @@
+---
+- name: 'Configure APT repository and install NGINX package'
+  become: true
+  block:
+    - name: 'Ensure dependencies are installed'
+      ansible.builtin.apt:
+        name:
+          - ca-certificates
+          - gnupg
+        update_cache: true
+        state: present
+
+    - name: 'Add NGINX APT key'
+      ansible.builtin.apt_key:
+        url: '{{ nginx_repository_key_url }}'
+        keyring: '/usr/share/keyrings/nginx-archive-keyring.gpg'
+        state: present
+      when: not ansible_check_mode
+
+    - name: 'Add NGINX APT repository'
+      ansible.builtin.template:
+        src: 'nginx.list.j2'
+        dest: '/etc/apt/sources.list.d/nginx.list'
+        owner: 'root'
+        group: 'root'
+        mode: 0644
+
+    - name: 'Pin NGINX APT repository'
+      ansible.builtin.copy:
+        content: |
+          Package: *
+          Pin: origin nginx.org
+          Pin: release o=nginx
+          Pin-Priority: 900
+        dest: '/etc/apt/preferences.d/99-nginx'
+        owner: root
+        group: root
+        mode: 0644
+
+    - name: 'Install NGINX package'
+      ansible.builtin.apt:
+        name: "nginx{{ ('=' + nginx_package_version) if (nginx_package_version | length) else '' }}"
+        allow_downgrade: "{{ omit if ansible_version['full'] is version('2.12', '<') else true }}"
+        update_cache: true
+        state: "{{ 'present' if (nginx_package_version | length) else 'latest' }}"

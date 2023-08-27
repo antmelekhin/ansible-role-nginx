@@ -1,0 +1,19 @@
+---
+- name: 'Configure and start NGINX'
+  become: true
+  block:
+    - name: 'Ensure /etc/nginx/conf.d exists'
+      ansible.builtin.file:
+        path: '/etc/nginx/conf.d'
+        owner: root
+        group: root
+        state: directory
+        mode: 0755
+      when: not ansible_check_mode
+
+    - name: 'Ensure NGINX is running and enabled at boot'
+      ansible.builtin.systemd:
+        name: nginx
+        state: started
+        enabled: true
+      when: not ansible_check_mode

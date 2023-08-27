@@ -1,0 +1,4 @@
+{{ ansible_managed | comment }}
+
+deb [signed-by=/usr/share/keyrings/nginx-archive-keyring.gpg] {{ nginx_repository_mirror }}/{{ _nginx_repository_branch }}{{ ansible_distribution | lower }} {{ ansible_distribution_release }} nginx
+deb-src [signed-by=/usr/share/keyrings/nginx-archive-keyring.gpg] {{ nginx_repository_mirror }}/{{ _nginx_repository_branch }}{{ ansible_distribution | lower }} {{ ansible_distribution_release }} nginx

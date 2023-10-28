@@ -1,8 +1,7 @@
 ---
 galaxy_info:
-  author: Melekhin Anton
+  author: antmelekhin
   role_name: nginx
-  namespace: antmelekhin
   description: An Ansible role that installs NGINX web server.
 
   license: MIT

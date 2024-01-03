@@ -1,4 +1,2 @@
 ---
 _nginx_repository_branch: "{{ (nginx_repository_branch == 'mainline') | ternary('mainline/', '') }}"
-
-_nginx_redhat_repository_distribution: "{{ (ansible_distribution == 'CentOS') | ternary('centos', 'rhel') }}"

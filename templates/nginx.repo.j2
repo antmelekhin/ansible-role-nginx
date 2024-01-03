@@ -2,8 +2,8 @@
 
 [nginx-{{ nginx_repository_branch }}]
 name=NGINX {{ nginx_repository_branch | capitalize }} Repository
-baseurl={{ nginx_repository_mirror }}/{{ _nginx_repository_branch }}{{ _nginx_redhat_repository_distribution }}/$releasever/$basearch/
+baseurl={{ _nginx_yum_repository }}
 gpgcheck=1
 enabled=1
-gpgkey={{ nginx_repository_key_url }}
+gpgkey={{ nginx_repository_gpgkey }}
 module_hotfixes=true

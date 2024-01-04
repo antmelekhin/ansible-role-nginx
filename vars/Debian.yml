@@ -1,0 +1,2 @@
+---
+_nginx_apt_repository: '{{ nginx_repository_mirror_url }}/{{ _nginx_repository_branch }}{{ ansible_distribution | lower }} {{ ansible_distribution_release }} nginx'

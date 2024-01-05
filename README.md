@@ -52,6 +52,23 @@ Example Playbook
       - role: antmelekhin.nginx
   ```
 
+- Install a specific version of `NGINX`:
+
+  ```yaml
+    ---
+  - name: 'Install NGINX v1.22.1'
+    hosts: all
+
+    roles:
+      - role: antmelekhin.nginx
+        nginx_version: '1.22.1-1~jammy'
+        when: ansible_distribution == 'Ubuntu' and ansible_distribution_version is version('22.04', '=')
+
+      - role: antmelekhin.nginx
+        nginx_version: '1.22.1'
+        when: ansible_os_family == 'RedHat'
+  ```
+
 License
 -------
 

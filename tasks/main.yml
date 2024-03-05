@@ -1,5 +1,5 @@
 ---
-- name: 'Include OS-specific variables'
+- name: 'Include OS-specific NGINX variables'
   ansible.builtin.include_vars: '{{ distribution }}'
   with_first_found:
     - '{{ ansible_distribution }}.yml'
@@ -7,8 +7,8 @@
   loop_control:
     loop_var: distribution
 
-- name: 'Include tasks for Installing NGINX'
+- name: 'Include tasks to install NGINX'
   ansible.builtin.include_tasks: 'install-{{ ansible_os_family }}.yml'
 
-- name: 'Include tasks for Configure NGINX'
+- name: 'Include tasks to configure NGINX'
   ansible.builtin.import_tasks: 'configure.yml'

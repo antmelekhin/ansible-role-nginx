@@ -13,7 +13,7 @@
     - name: 'Add NGINX APT key'
       ansible.builtin.apt_key:
         url: '{{ nginx_repository_gpgkey }}'
-        keyring: '/usr/share/keyrings/nginx-archive-keyring.gpg'
+        keyring: '{{ _nginx_apt_local_gpgkey }}'
         state: present
       when: not ansible_check_mode
 

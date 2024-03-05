@@ -1,7 +1,7 @@
 NGINX
 =====
 
-An Ansible role that installs NGINX web server.
+An Ansible role to install NGINX web server.
 
 Requirements
 ------------

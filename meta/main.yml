@@ -2,7 +2,7 @@
 galaxy_info:
   author: antmelekhin
   role_name: nginx
-  description: An Ansible role that installs NGINX web server.
+  description: An Ansible role to install NGINX web server.
 
   license: MIT
 

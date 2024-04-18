@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.2](https://github.com/antmelekhin/ansible-role-nginx/compare/v1.1.1...v1.1.2) (2024-04-18)
+
+
+### Code Refactoring
+
+* update variable names, rm conditional expression, quote strings and rm loop for `include_vars` ([#3](https://github.com/antmelekhin/ansible-role-nginx/issues/3)) ([03272db](https://github.com/antmelekhin/ansible-role-nginx/commit/03272dbbd5e9ac3692722eb6938273055126658f))
+
 ## [1.1.1](https://github.com/antmelekhin/ansible-role-nginx/compare/v1.1.0...v1.1.1) (2024-04-18)
 
 

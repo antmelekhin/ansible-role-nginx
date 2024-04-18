@@ -1,5 +1,5 @@
 ---
 nginx_version: ''
 nginx_repository_mirror_url: 'https://nginx.org/packages'
-nginx_repository_gpgkey: 'https://nginx.org/keys/nginx_signing.key'
+nginx_repository_gpgkey_url: 'https://nginx.org/keys/nginx_signing.key'
 nginx_repository_branch: 'stable'

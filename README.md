@@ -26,7 +26,7 @@ Role Variables
 
 - `nginx_version` The specific version of `NGINX` to install (default: `''`).
 - `nginx_repository_mirror_url` Mirror of `NGINX` repository (default: `https://nginx.org/packages`).
-- `nginx_repository_gpgkey` URL to `NGINX` GPG public key file (default: `https://nginx.org/keys/nginx_signing.key`).
+- `nginx_repository_gpgkey_url` URL to `NGINX` GPG public key file (default: `https://nginx.org/keys/nginx_signing.key`).
 - `nginx_repository_branch` `NGINX` release branch.
 
   Available values:

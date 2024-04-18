@@ -2,8 +2,8 @@
 
 [nginx-{{ nginx_repository_branch }}]
 name=NGINX {{ nginx_repository_branch | capitalize }} Repository
-baseurl={{ _nginx_yum_repository }}
+baseurl={{ _nginx_repository }}
 gpgcheck=1
 enabled=1
-gpgkey={{ nginx_repository_gpgkey }}
+gpgkey={{ nginx_repository_gpgkey_url }}
 module_hotfixes=true

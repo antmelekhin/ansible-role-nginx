@@ -1,5 +1,29 @@
 # Changelog
 
+## [1.1.3](https://github.com/antmelekhin/ansible-role-nginx/compare/v1.1.2...v1.1.3) (2024-04-26)
+
+
+### Documentation
+
+* **README:** fixed examples view for Ansible Galaxy ([86a849c](https://github.com/antmelekhin/ansible-role-nginx/commit/86a849c4147c3ad99d479e00b6495fb5a6697484))
+
+
+### Fixes
+
+* fixed running a role in `check_mode` ([d7c169d](https://github.com/antmelekhin/ansible-role-nginx/commit/d7c169d682cfa0706f7b13f926de09f5ff2855be))
+
+
+### Styles
+
+* use double underline regiter variable ([d6e37c8](https://github.com/antmelekhin/ansible-role-nginx/commit/d6e37c806cd66ad91a57dabea4907896f69ded40))
+
+
+### Tests
+
+* add .tox as ignore ([c996c1c](https://github.com/antmelekhin/ansible-role-nginx/commit/c996c1c90055c8bc0ff98ea6324a0e8651440311))
+* add role_name prefix to instance name ([8053c07](https://github.com/antmelekhin/ansible-role-nginx/commit/8053c07040934086b56ece9451b5894249f36dfa))
+* run linters in its own workflow ([3724b48](https://github.com/antmelekhin/ansible-role-nginx/commit/3724b4882103f5e79f1d435492359a5492b72c6a))
+
 ## [1.1.2](https://github.com/antmelekhin/ansible-role-nginx/compare/v1.1.1...v1.1.2) (2024-04-18)
 
 

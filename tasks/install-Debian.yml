@@ -1,23 +1,24 @@
 ---
-- name: 'Configure APT repository and install NGINX package'
+- name: 'Debian | Configure the repository and install the NGINX package'
   become: true
   block:
-    - name: 'Ensure dependencies are installed'
+    - name: 'Debian | Ensure dependencies are installed'
       ansible.builtin.apt:
         name:
+          - 'apt-transport-https'
           - 'ca-certificates'
           - 'gnupg'
         update_cache: true
         state: 'present'
       when: not ansible_check_mode
 
-    - name: 'Add NGINX APT key'
+    - name: 'Debian | Add the NGINX repository GPG key'
       ansible.builtin.apt_key:
         url: '{{ nginx_repository_gpgkey_url }}'
         keyring: '{{ _nginx_local_gpgkey_path }}'
         state: 'present'
 
-    - name: 'Add NGINX APT repository'
+    - name: 'Debian | Add the NGINX repository'
       ansible.builtin.template:
         src: 'nginx.list.j2'
         dest: '/etc/apt/sources.list.d/nginx.list'
@@ -25,7 +26,7 @@
         group: 'root'
         mode: 0644
 
-    - name: 'Pin NGINX APT repository'
+    - name: 'Debian | Pin the NGINX repository'
       ansible.builtin.copy:
         content: |
           Package: *
@@ -37,7 +38,7 @@
         group: 'root'
         mode: 0644
 
-    - name: 'Install NGINX package'
+    - name: 'Debian | Install the NGINX package'
       ansible.builtin.apt:
         name: "nginx{{ ('=' + nginx_version) if (nginx_version | length) else '' }}"
         allow_downgrade: true

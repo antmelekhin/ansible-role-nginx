@@ -10,7 +10,7 @@
         state: 'directory'
         mode: 0755
 
-    - name: 'Ensure NGINX is running and enabled at boot'
+    - name: 'Ensure the NGINX is running and enabled at boot'
       ansible.builtin.systemd:
         name: 'nginx'
         state: 'started'

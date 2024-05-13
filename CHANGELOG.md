@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.1.4](https://github.com/antmelekhin/ansible-role-nginx/compare/v1.1.3...v1.1.4) (2024-05-13)
+
+
+### Documentation
+
+* **README:** update variables documentation ([bddbdb9](https://github.com/antmelekhin/ansible-role-nginx/commit/bddbdb98dc9b01ef934000a92a43804e8a277aad))
+
+
+### Styles
+
+* add newline to end of file ([cb03fdc](https://github.com/antmelekhin/ansible-role-nginx/commit/cb03fdcbd4f7e5ac7cbaa14d4e420d46b3e0f67a))
+* quote string ([78f9b0e](https://github.com/antmelekhin/ansible-role-nginx/commit/78f9b0ef6465b1ec82f3bc5234475f5d34d6f25a))
+* rename tasks ([f3e5e30](https://github.com/antmelekhin/ansible-role-nginx/commit/f3e5e30cfad803ac1cd23c495c72550223545340))
+
 ## [1.1.3](https://github.com/antmelekhin/ansible-role-nginx/compare/v1.1.2...v1.1.3) (2024-04-26)
 
 

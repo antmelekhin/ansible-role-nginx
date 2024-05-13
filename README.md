@@ -1,7 +1,7 @@
 NGINX
 =====
 
-An Ansible role to install NGINX web server.
+An Ansible role to install [NGINX](https://www.nginx.com/) web server.
 
 Requirements
 ------------
@@ -24,10 +24,12 @@ Requirements
 Role Variables
 --------------
 
-- `nginx_version` The specific version of `NGINX` to install (default: `''`).
-- `nginx_repository_mirror_url` Mirror of `NGINX` repository (default: `https://nginx.org/packages`).
-- `nginx_repository_gpgkey_url` URL to `NGINX` GPG public key file (default: `https://nginx.org/keys/nginx_signing.key`).
-- `nginx_repository_branch` `NGINX` release branch.
+Variables used to install NGINX:
+
+- `nginx_version` The version of the NGINX package. By default, NGINX is installed with the latest available version.
+- `nginx_repository_mirror_url` NGINX repository mirror (default: `https://nginx.org/packages`).
+- `nginx_repository_gpgkey_url`URL to NGINX repository GPG key file (default: `https://nginx.org/keys/nginx_signing.key`).
+- `nginx_repository_branch` NGINX repository release channel.
 
   Available values:
   - `stable` (default)
@@ -41,7 +43,7 @@ None.
 Example Playbook
 ----------------
 
-Install `NGINX`:
+Install NGINX:
 
 ```yaml
 ---
@@ -52,7 +54,7 @@ Install `NGINX`:
     - role: antmelekhin.nginx
 ```
 
-Install a specific version of `NGINX`:
+Install NGINX v1.22.1:
 
 ```yaml
   ---

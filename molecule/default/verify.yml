@@ -13,20 +13,20 @@
             ansible_facts.services['nginx.service'].state == 'active'
           - ansible_facts.services['nginx.service'].status == 'enabled'
 
-    - name: 'Check current NGINX version'
+    - name: 'Verify the NGINX web server is responding to requests'
+      ansible.builtin.uri:
+        url: 'http://{{ ansible_host }}:80'
+      register: __nginx_response
+      until: __nginx_response.status == 200
+      retries: 120
+      delay: 5
+
+    - name: 'Check the current NGINX version'
       ansible.builtin.command:
         cmd: '/usr/sbin/nginx -v'
       changed_when: false
       register: __nginx_version_check
 
-    - name: 'Version output'
+    - name: 'NGINX version output'
       ansible.builtin.debug:
         var: __nginx_version_check.stderr_lines[0].split('/')[1]
-
-    - name: 'Check url'
-      ansible.builtin.uri:
-        url: 'http://{{ ansible_host }}:80'
-      register: __nginx_result
-      until: __nginx_result.status == 200
-      retries: 120
-      delay: 5

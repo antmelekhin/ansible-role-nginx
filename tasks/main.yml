@@ -1,9 +1,9 @@
 ---
-- name: 'Include the NGINX OS-specific variables'
+- name: 'Load the NGINX OS-specific variables'
   ansible.builtin.include_vars: '{{ ansible_os_family }}.yml'
 
-- name: 'Include tasks to install NGINX'
+- name: 'Install NGINX'
   ansible.builtin.include_tasks: 'install-{{ ansible_os_family }}.yml'
 
-- name: 'Include tasks to configure NGINX'
+- name: 'Configure NGINX'
   ansible.builtin.import_tasks: 'configure.yml'

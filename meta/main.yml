@@ -1,32 +1,32 @@
 ---
 galaxy_info:
-  author: antmelekhin
-  role_name: nginx
-  description: An Ansible role to install NGINX web server.
+  author: 'antmelekhin'
+  role_name: 'nginx'
+  description: 'An Ansible role to install the NGINX web server.'
 
-  license: MIT
+  license: 'MIT'
 
   min_ansible_version: '2.12'
 
   platforms:
-    - name: Debian
+    - name: 'Debian'
       versions:
         - 'buster'
         - 'bullseye'
         - 'bookworm'
-    - name: EL
+    - name: 'EL'
       versions:
         - '7'
         - '8'
         - '9'
-    - name: Ubuntu
+    - name: 'Ubuntu'
       versions:
         - 'bionic'
         - 'focal'
         - 'jammy'
 
   galaxy_tags:
-    - nginx
-    - web
+    - 'nginx'
+    - 'web'
 
 dependencies: []

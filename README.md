@@ -1,7 +1,7 @@
 NGINX
 =====
 
-An Ansible role to install [NGINX](https://www.nginx.com/) web server.
+An Ansible role to install the [NGINX](https://www.nginx.com/) web server.
 
 Requirements
 ------------
@@ -24,16 +24,10 @@ Requirements
 Role Variables
 --------------
 
-Variables used to install NGINX:
-
 - `nginx_version` The version of the NGINX package. By default, NGINX is installed with the latest available version.
-- `nginx_repository_mirror_url` NGINX repository mirror (default: `https://nginx.org/packages`).
+- `nginx_repository_mirror_url` The NGINX repository mirror (default: `https://nginx.org/packages`).
 - `nginx_repository_gpgkey_url`URL to NGINX repository GPG key file (default: `https://nginx.org/keys/nginx_signing.key`).
-- `nginx_repository_branch` NGINX repository release channel.
-
-  Available values:
-  - `stable` (default)
-  - `mainline`
+- `nginx_repository_branch` NGINX repository release channel. Available values are: `stable` (default), `mainline`.
 
 Dependencies
 ------------

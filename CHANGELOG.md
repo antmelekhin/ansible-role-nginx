@@ -1,5 +1,22 @@
 # Changelog
 
+## [1.2.0](https://github.com/antmelekhin/ansible-role-nginx/compare/v1.1.4...v1.2.0) (2024-08-06)
+
+
+### Improvements
+
+* merge OS-specific variables into the `vars/main.yml` file ([#5](https://github.com/antmelekhin/ansible-role-nginx/issues/5)) ([4699ac7](https://github.com/antmelekhin/ansible-role-nginx/commit/4699ac7aaae42a587def9f0a58ffb291eeb43a4c))
+
+
+### Styles
+
+* update common role style ([#4](https://github.com/antmelekhin/ansible-role-nginx/issues/4)) ([c7b24d2](https://github.com/antmelekhin/ansible-role-nginx/commit/c7b24d20674d844e48d8d79d52e723cc76dc9ceb))
+
+
+### Tests
+
+* clean version output in the default scenario ([be71ba1](https://github.com/antmelekhin/ansible-role-nginx/commit/be71ba17e093ff290319d0f2b7d921832c6b1b94))
+
 ## [1.1.4](https://github.com/antmelekhin/ansible-role-nginx/compare/v1.1.3...v1.1.4) (2024-05-13)
 
 

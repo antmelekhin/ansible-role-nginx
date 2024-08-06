@@ -1,2 +1,9 @@
 ---
-_nginx_repository_branch: "{{ (nginx_repository_branch == 'mainline') | ternary('mainline/', '') }}"
+__nginx_repository_gpgkey_keyring: '/usr/share/keyrings/nginx-archive-keyring.gpg'
+
+__nginx_repository_branch: "{{ (nginx_repository_branch == 'mainline') | ternary('mainline/', '') }}"
+__nginx_repository_dict:
+  Debian: '{{ nginx_repository_mirror_url }}/{{ __nginx_repository_branch }}{{ ansible_distribution | lower }} {{ ansible_distribution_release }} nginx'
+  RedHat: "{{ nginx_repository_mirror_url }}/{{ __nginx_repository_branch }}{{ (ansible_distribution == 'CentOS') | ternary('centos', 'rhel') }}/$releasever/$basearch/"
+
+__nginx_repository: '{{ __nginx_repository_dict[ansible_os_family] }}'

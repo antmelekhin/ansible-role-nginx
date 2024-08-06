@@ -2,7 +2,7 @@
 
 [nginx-{{ nginx_repository_branch }}]
 name=NGINX {{ nginx_repository_branch | capitalize }} Repository
-baseurl={{ _nginx_repository }}
+baseurl={{ nginx_repository }}
 gpgcheck=1
 enabled=1
 gpgkey={{ nginx_repository_gpgkey_url }}

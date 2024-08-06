@@ -1,3 +1,0 @@
----
-_nginx_repository_distribution: "{{ (ansible_distribution == 'CentOS') | ternary('centos', 'rhel') }}"
-_nginx_repository: '{{ nginx_repository_mirror_url }}/{{ _nginx_repository_branch }}{{ _nginx_repository_distribution }}/$releasever/$basearch/'

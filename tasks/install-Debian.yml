@@ -9,13 +9,14 @@
           - 'ca-certificates'
           - 'gnupg'
         update_cache: true
+        cache_valid_time: 3600
         state: 'present'
-      when: not ansible_check_mode
+      check_mode: false
 
     - name: 'Debian | Add the NGINX repository GPG key'
       ansible.builtin.apt_key:
         url: '{{ nginx_repository_gpgkey_url }}'
-        keyring: '{{ _nginx_local_gpgkey_path }}'
+        keyring: '{{ __nginx_repository_gpgkey_keyring }}'
         state: 'present'
 
     - name: 'Debian | Add the NGINX repository'
@@ -40,8 +41,8 @@
 
     - name: 'Debian | Install the NGINX package'
       ansible.builtin.apt:
-        name: "nginx{{ ('=' + nginx_version) if (nginx_version | length) else '' }}"
+        name: "nginx{{ ('=' + nginx_package_version) if (nginx_package_version | length) else '' }}"
         allow_downgrade: true
         update_cache: true
-        state: "{{ 'present' if (nginx_version | length) else 'latest' }}"
-      when: not ansible_check_mode
+        state: "{{ 'present' if (nginx_package_version | length) else 'latest' }}"
+      ignore_errors: '{{ ansible_check_mode }}'

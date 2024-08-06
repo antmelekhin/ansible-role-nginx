@@ -27,6 +27,6 @@
       changed_when: false
       register: __nginx_version_check
 
-    - name: 'NGINX version output'
+    - name: 'The NGINX version output'
       ansible.builtin.debug:
-        var: __nginx_version_check.stderr_lines[0].split('/')[1]
+        msg: "The current NGINX version is {{ __nginx_version_check.stderr_lines[0].split('/')[1] }}"

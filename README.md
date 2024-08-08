@@ -8,10 +8,16 @@ Requirements
 
 - Supported version of Ansible: 2.12 and highter.
 - Supported platforms:
+  - Amazon Linux
+    - 2
+    - 2023
   - Debian
     - 10
     - 11
     - 12
+  - Fedora
+    - 39
+    - 40
   - RHEL
     - 7
     - 8

@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.0](https://github.com/antmelekhin/ansible-role-nginx/compare/v1.2.0...v1.3.0) (2024-08-08)
+
+
+### Features
+
+* add `fedora` and `amazonlinux` support ([#6](https://github.com/antmelekhin/ansible-role-nginx/issues/6)) ([299b6e2](https://github.com/antmelekhin/ansible-role-nginx/commit/299b6e2df54a83656f30eac3580d383b88a31344))
+
 ## [1.2.0](https://github.com/antmelekhin/ansible-role-nginx/compare/v1.1.4...v1.2.0) (2024-08-06)
 
 

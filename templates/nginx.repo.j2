@@ -1,7 +1,7 @@
 {{ ansible_managed | comment }}
 
-[nginx-{{ nginx_repository_branch }}]
-name=NGINX {{ nginx_repository_branch | capitalize }} Repository
+[nginx-{{ nginx_repository_release_channel }}]
+name=NGINX {{ nginx_repository_release_channel | capitalize }} Repository
 baseurl={{ nginx_repository }}
 gpgcheck=1
 enabled=1

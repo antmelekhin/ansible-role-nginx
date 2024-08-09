@@ -30,10 +30,9 @@ Requirements
 Role Variables
 --------------
 
-- `nginx_version` The version of the NGINX package. By default, NGINX is installed with the latest available version.
-- `nginx_repository_mirror_url` The NGINX repository mirror (default: `https://nginx.org/packages`).
-- `nginx_repository_gpgkey_url`URL to NGINX repository GPG key file (default: `https://nginx.org/keys/nginx_signing.key`).
-- `nginx_repository_branch` NGINX repository release channel. Available values are: `stable` (default), `mainline`.
+All variables that can be overridden are stored in the [defaults/main.yml](defaults/main.yml) file.
+Please refer to the [meta/argument_specs.yml](meta/argument_specs.yml) file for a description of the available variables.
+Similarly, descriptions and defaults for preset variables can be found in the [vars/main.yml](vars/main.yml) file.
 
 Dependencies
 ------------

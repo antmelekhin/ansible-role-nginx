@@ -25,10 +25,10 @@ argument_specs:
       nginx_repository_release_channel:
         type: 'str'
         description: 'NGINX repository release channel.'
-        default: 'stable'
         choices:
           - 'stable'
           - 'mainline'
+        default: 'stable'
       nginx_repository:
         type: 'str'
         description: 'Specify the NGINX repository.'

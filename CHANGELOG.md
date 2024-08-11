@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.1](https://github.com/antmelekhin/ansible-role-nginx/compare/v1.4.0...v1.4.1) (2024-08-11)
+
+
+### Fixes
+
+* fixed the default repository URL for Amazon Linux 2 ([cfc0bfe](https://github.com/antmelekhin/ansible-role-nginx/commit/cfc0bfe67a60d21cdcbe8cee540f9094ccdab95a))
+
 ## [1.4.0](https://github.com/antmelekhin/ansible-role-nginx/compare/v1.3.0...v1.4.0) (2024-08-11)
 
 

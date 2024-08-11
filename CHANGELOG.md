@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.0](https://github.com/antmelekhin/ansible-role-nginx/compare/v1.3.0...v1.4.0) (2024-08-11)
+
+
+### Features
+
+* add `meta/argument_specs.yml` file ([#7](https://github.com/antmelekhin/ansible-role-nginx/issues/7)) ([6e9a3bf](https://github.com/antmelekhin/ansible-role-nginx/commit/6e9a3bfd8dfa02950c95760c140b64268b403f3a))
+
 ## [1.3.0](https://github.com/antmelekhin/ansible-role-nginx/compare/v1.2.0...v1.3.0) (2024-08-08)
 
 

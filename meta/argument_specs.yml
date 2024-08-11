@@ -1,0 +1,35 @@
+---
+argument_specs:
+  main:
+    short_description: 'NGINX'
+    description:
+      - 'An Ansible role to install the L(NGINX,https://www.nginx.com/) web server.'
+    author:
+      - 'Melekhin Anton'
+    options:
+      nginx_package_version:
+        type: 'str'
+        description:
+          - 'The version of the NGINX package.'
+          - 'By default, NGINX is installed with the latest available version.'
+      nginx_repository_mirror_url:
+        type: 'str'
+        description: 'The NGINX repository mirror.'
+        default: 'https://nginx.org/packages'
+      nginx_repository_gpgkey_url:
+        type: 'str'
+        description:
+          - 'Specify where to fetch the NGINX GPG key file from.'
+          - 'By default, the role uses the official NGINX GPG key.'
+        default: 'https://nginx.org/keys/nginx_signing.key'
+      nginx_repository_release_channel:
+        type: 'str'
+        description: 'NGINX repository release channel.'
+        choices:
+          - 'stable'
+          - 'mainline'
+        default: 'stable'
+      nginx_repository:
+        type: 'str'
+        description: 'Specify the NGINX repository.'
+        default: '{{ __nginx_repository }}'

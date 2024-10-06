@@ -4,8 +4,7 @@ argument_specs:
     short_description: 'NGINX'
     description:
       - 'An Ansible role to install the L(NGINX,https://www.nginx.com/) web server.'
-    author:
-      - 'Melekhin Anton'
+    author: 'Melekhin Anton'
     options:
       nginx_package_version:
         type: 'str'

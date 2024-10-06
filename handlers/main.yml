@@ -1,7 +1,7 @@
 ---
 - name: 'Restart NGINX'
+  become: true
   ansible.builtin.systemd:
     name: 'nginx'
     state: 'restarted'
   when: not ansible_check_mode
-  become: true

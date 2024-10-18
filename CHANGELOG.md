@@ -1,5 +1,22 @@
 # Changelog
 
+## [1.4.2](https://github.com/antmelekhin/ansible-role-nginx/compare/v1.4.1...v1.4.2) (2024-10-18)
+
+
+### Code Refactoring
+
+* fix some variables form `vars/main.yml` file ([af239cc](https://github.com/antmelekhin/ansible-role-nginx/commit/af239cc14f8a008cfbafce53a54b2e664535afba))
+
+
+### Continuous Integration
+
+* use `ubuntu-22.04` instead of `ubuntu-latest` ([772bbf4](https://github.com/antmelekhin/ansible-role-nginx/commit/772bbf41a7ad49781b5e60c5fd58eb5e27e31463))
+
+
+### Styles
+
+* minor fixes ([2d58aad](https://github.com/antmelekhin/ansible-role-nginx/commit/2d58aad636efbed9cf9252bd1daed11150ddbae3))
+
 ## [1.4.1](https://github.com/antmelekhin/ansible-role-nginx/compare/v1.4.0...v1.4.1) (2024-08-11)
 
 

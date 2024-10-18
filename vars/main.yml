@@ -4,7 +4,7 @@ __nginx_repository_gpgkey_keyring: '/usr/share/keyrings/nginx-archive-keyring.gp
 __nginx_repository_release_channel: "{{ (nginx_repository_release_channel == 'mainline') | ternary('mainline/', '') }}"
 __nginx_repository_dict:
   Amazon: "{{ nginx_repository_mirror_url }}/{{ __nginx_repository_release_channel }}amzn{{ '2/2' if (ansible_distribution_major_version == '2' and nginx_repository_release_channel == 'mainline') else '/2023' }}/$basearch"
-  Debian: '{{ nginx_repository_mirror_url }}/{{ __nginx_repository_release_channel }}{{ ansible_distribution | lower }} {{ ansible_distribution_release }} nginx'
+  Debian: 'deb [signed-by={{ __nginx_repository_gpgkey_keyring }}] {{ nginx_repository_mirror_url }}/{{ __nginx_repository_release_channel }}{{ ansible_distribution | lower }} {{ ansible_distribution_release }} nginx'
   RedHat: "{{ nginx_repository_mirror_url }}/{{ __nginx_repository_release_channel }}{{ (ansible_distribution == 'CentOS') | ternary('centos', 'rhel') }}/$releasever/$basearch"
 
 __nginx_repository: '{{ __nginx_repository_dict[ansible_distribution] | default(__nginx_repository_dict[ansible_os_family]) }}'

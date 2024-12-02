@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.3](https://github.com/antmelekhin/ansible-role-nginx/compare/v1.4.2...v1.4.3) (2024-12-02)
+
+
+### Documentation
+
+* **README:** updated requirements ([3f345d6](https://github.com/antmelekhin/ansible-role-nginx/commit/3f345d6207c2a43f25faac70e4ce8609dda78b2c))
+
 ## [1.4.2](https://github.com/antmelekhin/ansible-role-nginx/compare/v1.4.1...v1.4.2) (2024-10-18)
 
 

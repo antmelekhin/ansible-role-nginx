@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.4](https://github.com/antmelekhin/ansible-role-nginx/compare/v1.4.3...v1.4.4) (2026-04-17)
+
+
+### Fixes
+
+* use newer style ansible facts ([a916bb6](https://github.com/antmelekhin/ansible-role-nginx/commit/a916bb66e718e8cf5da0971b100b61ad77455d3b))
+
 ## [1.4.3](https://github.com/antmelekhin/ansible-role-nginx/compare/v1.4.2...v1.4.3) (2024-12-02)
 
 

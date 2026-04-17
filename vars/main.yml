@@ -1,4 +1,5 @@
 ---
+# Default NGINX repository
 __nginx_repository_gpgkey_keyring: '/usr/share/keyrings/nginx-archive-keyring.gpg'
 
 __nginx_repository_release_channel: "{{ (nginx_repository_release_channel == 'mainline') | ternary('mainline/', '') }}"
@@ -8,3 +9,7 @@ __nginx_repository_dict:
   RedHat: "{{ nginx_repository_mirror_url }}/{{ __nginx_repository_release_channel }}{{ (ansible_facts['distribution'] == 'CentOS') | ternary('centos', 'rhel') }}/$releasever/$basearch"
 
 __nginx_repository: "{{ __nginx_repository_dict[ansible_facts['distribution']] | default(__nginx_repository_dict[ansible_facts['os_family']]) }}"
+
+# NGINX package
+__nginx_version_separator: "{{ (ansible_facts['pkg_mgr'] == 'apt') | ternary('=', '-') }}"
+__nginx_package: "nginx{{ (__nginx_version_separator + nginx_package_version) if (nginx_package_version | length > 0) else '' }}"

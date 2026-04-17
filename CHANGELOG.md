@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.5.0](https://github.com/antmelekhin/ansible-role-nginx/compare/v1.4.4...v1.5.0) (2026-04-17)
+
+
+### Features
+
+* add `nginx_setup` variable ([#8](https://github.com/antmelekhin/ansible-role-nginx/issues/8)) ([77b5284](https://github.com/antmelekhin/ansible-role-nginx/commit/77b5284db9c1a94f11f98ab435f08de1dccc1f23))
+
 ## [1.4.4](https://github.com/antmelekhin/ansible-role-nginx/compare/v1.4.3...v1.4.4) (2026-04-17)
 
 

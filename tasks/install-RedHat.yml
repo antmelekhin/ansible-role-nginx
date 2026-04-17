@@ -19,8 +19,8 @@
 
     - name: 'RedHat | Install the NGINX package'
       ansible.builtin.yum:
-        name: "nginx{{ ('-' + nginx_package_version) if (nginx_package_version | length) else '' }}"
+        name: '{{ __nginx_package }}'
         allow_downgrade: true
         update_cache: true
-        state: "{{ 'present' if (nginx_package_version | length) else 'latest' }}"
+        state: "{{ (nginx_setup == 'upgrade') | ternary('latest', 'present') }}"
       ignore_errors: '{{ ansible_check_mode }}'

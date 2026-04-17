@@ -1,6 +1,12 @@
 ---
 - name: 'Install NGINX'
   ansible.builtin.include_tasks: "install-{{ ansible_facts['os_family'] }}.yml"
+  when: nginx_setup in ['install', 'upgrade']
 
 - name: 'Configure NGINX'
   ansible.builtin.import_tasks: 'configure.yml'
+  when: nginx_setup in ['install', 'upgrade']
+
+- name: 'Uninstall NGINX'
+  ansible.builtin.import_tasks: 'uninstall.yml'
+  when: nginx_setup in ['uninstall']

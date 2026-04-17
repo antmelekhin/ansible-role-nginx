@@ -6,6 +6,18 @@ argument_specs:
       - 'An Ansible role to install the L(NGINX,https://www.nginx.com/) web server.'
     author: 'Melekhin Anton'
     options:
+      nginx_setup:
+        type: 'str'
+        description:
+          - 'Specify whether you want to install, upgrade to the latest version, or remove NGINX.'
+          - "Using 'install' will install the latest version of NGINX on a fresh install."
+          - "Using 'upgrade' will upgrade NGINX to the latest version of on every playbook execution."
+          - "Using 'uninstall' will remove NGINX from your system."
+        choices:
+          - 'install'
+          - 'upgrade'
+          - 'uninstall'
+        default: 'install'
       nginx_package_version:
         type: 'str'
         description:

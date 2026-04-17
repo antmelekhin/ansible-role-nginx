@@ -1,0 +1,32 @@
+---
+- name: 'Uninstall NGINX'
+  become: true
+  block:
+    - name: 'Debian | Uninstall NGINX'
+      when: ansible_facts['os_family'] == 'Debian'
+      block:
+        - name: 'Debian | Uninstall the NGINX package'
+          ansible.builtin.apt:
+            name: '{{ __nginx_package }}'
+            autoremove: true
+            purge: true
+            state: 'absent'
+
+        - name: 'Debian | Remove the NGINX repository'
+          ansible.builtin.file:
+            path: '/etc/apt/sources.list.d/nginx.list'
+            state: 'absent'
+
+    - name: 'RedHat | Uninstall NGINX'
+      when: ansible_facts['os_family'] == 'RedHat'
+      block:
+        - name: 'RedHat | Uninstall the NGINX package'
+          ansible.builtin.yum:
+            name: '{{ __nginx_package }}'
+            autoremove: true
+            state: 'absent'
+
+        - name: 'RedHat | Remove the NGINX repository'
+          ansible.builtin.file:
+            path: '/etc/yum.repos.d/nginx.repo'
+            state: 'absent'

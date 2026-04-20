@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.5.1](https://github.com/antmelekhin/ansible-role-nginx/compare/v1.5.0...v1.5.1) (2026-04-20)
+
+
+### Code Refactoring
+
+* update uninstall tasks ([6d13c10](https://github.com/antmelekhin/ansible-role-nginx/commit/6d13c103e7d2fadea12f161d297401e17268c6b1))
+
+
+### Fixes
+
+* change import_tasks to include_tasks for hidding skipped tasks ([ecab384](https://github.com/antmelekhin/ansible-role-nginx/commit/ecab3844ba35bfeb4f690c93cef0bdff412b7814))
+
 ## [1.5.0](https://github.com/antmelekhin/ansible-role-nginx/compare/v1.4.4...v1.5.0) (2026-04-17)
 
 

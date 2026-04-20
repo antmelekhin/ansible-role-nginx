@@ -4,9 +4,9 @@
   when: nginx_setup in ['install', 'upgrade']
 
 - name: 'Configure NGINX'
-  ansible.builtin.import_tasks: 'configure.yml'
+  ansible.builtin.include_tasks: 'configure.yml'
   when: nginx_setup in ['install', 'upgrade']
 
 - name: 'Uninstall NGINX'
-  ansible.builtin.import_tasks: 'uninstall.yml'
+  ansible.builtin.include_tasks: 'uninstall.yml'
   when: nginx_setup in ['uninstall']

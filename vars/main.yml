@@ -10,6 +10,12 @@ __nginx_repository_dict:
 
 __nginx_repository: "{{ __nginx_repository_dict[ansible_facts['distribution']] | default(__nginx_repository_dict[ansible_facts['os_family']]) }}"
 
+__nginx_repository_file_dict:
+  Debian: '/etc/apt/sources.list.d/nginx.list'
+  RedHat: '/etc/yum.repos.d/nginx.repo'
+
+__nginx_repository_file: "{{ __nginx_repository_file_dict[ansible_facts['os_family']] }}"
+
 # NGINX package
 __nginx_version_separator: "{{ (ansible_facts['pkg_mgr'] == 'apt') | ternary('=', '-') }}"
 __nginx_package: "nginx{{ (__nginx_version_separator + nginx_package_version) if (nginx_package_version | length > 0) else '' }}"

@@ -22,7 +22,7 @@
     - name: 'Debian | Add the NGINX repository'
       ansible.builtin.template:
         src: 'nginx.list.j2'
-        dest: '/etc/apt/sources.list.d/nginx.list'
+        dest: '{{ __nginx_repository_file }}'
         owner: 'root'
         group: 'root'
         mode: 0644

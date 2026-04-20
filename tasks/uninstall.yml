@@ -2,6 +2,18 @@
 - name: 'Uninstall NGINX'
   become: true
   block:
+    - name: 'Check if NGINX systemd service is existed'
+      ansible.builtin.stat:
+        path: '/lib/systemd/system/nginx.service'
+      register: __nginx_unit_file
+
+    - name: 'Ensure NGINX is stopped and disabled at boot'
+      ansible.builtin.systemd:
+        name: 'nginx'
+        state: 'stopped'
+        enabled: false
+      when: __nginx_unit_file.stat.exists
+
     - name: 'Debian | Uninstall NGINX'
       when: ansible_facts['os_family'] == 'Debian'
       block:
@@ -12,21 +24,30 @@
             purge: true
             state: 'absent'
 
-        - name: 'Debian | Remove the NGINX repository'
+        - name: 'Debian | Unpin the NGINX repository'
           ansible.builtin.file:
-            path: '/etc/apt/sources.list.d/nginx.list'
+            path: '/etc/apt/preferences.d/99-nginx'
             state: 'absent'
 
-    - name: 'RedHat | Uninstall NGINX'
+    - name: 'RedHat | Uninstall the NGINX package'
+      ansible.builtin.yum:
+        name: '{{ __nginx_package }}'
+        autoremove: true
+        state: 'absent'
       when: ansible_facts['os_family'] == 'RedHat'
-      block:
-        - name: 'RedHat | Uninstall the NGINX package'
-          ansible.builtin.yum:
-            name: '{{ __nginx_package }}'
-            autoremove: true
-            state: 'absent'
 
-        - name: 'RedHat | Remove the NGINX repository'
-          ansible.builtin.file:
-            path: '/etc/yum.repos.d/nginx.repo'
-            state: 'absent'
+    - name: 'Remove the NGINX repository'
+      ansible.builtin.file:
+        path: '{{ __nginx_repository_file }}'
+        state: 'absent'
+
+    - name: 'Remove NGINX user'
+      ansible.builtin.user:
+        name: 'nginx'
+        state: 'absent'
+        remove: true
+
+    - name: 'Remove NGINX group'
+      ansible.builtin.group:
+        name: 'nginx'
+        state: 'absent'

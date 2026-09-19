@@ -25,7 +25,7 @@
         dest: '{{ __nginx_repository_file }}'
         owner: 'root'
         group: 'root'
-        mode: 0644
+        mode: '0644'
 
     - name: 'Debian | Pin the NGINX repository'
       ansible.builtin.copy:
@@ -37,7 +37,7 @@
         dest: '/etc/apt/preferences.d/99-nginx'
         owner: 'root'
         group: 'root'
-        mode: 0644
+        mode: '0644'
 
     - name: 'Debian | Install the NGINX package'
       ansible.builtin.apt:
